@@ -1,0 +1,28 @@
+{
+  "name": "AS400Remastered",
+  "version": "1.0.0",
+  "description": "AS/400 Remastered Hackathon Project",
+  "main": "main.js",
+  "scripts": {
+    "start": "electron .",
+    "dist": "electron-builder"
+  },
+  "devDependencies": {
+    "electron": "^26.0.0",
+    "electron-builder": "^26.4.0"
+  },
+  "build": {
+    "appId": "com.yourname.as400remastered",
+    "directories": {
+      "output": "dist"
+    },
+    "files": [
+      "**/*"
+    ],
+    "win": {
+      "target": [
+        "nsis"
+      ]
+    }
+  }
+}

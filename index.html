@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<title>AS/400 Remastered</title>
+<style>
+  body {
+    margin: 0;
+    font-family: Consolas, monospace;
+    display: flex;
+    height: 100vh;
+    background-color: #1e1e1e;
+    color: #fff;
+  }
+
+  /* Écran Legacy style AS/400 */
+  #legacy {
+    flex: 1;
+    background-color: black;
+    color: #00FF00; /* vert typique AS/400 */
+    padding: 16px;
+    overflow-y: auto;
+    white-space: pre-wrap; /* pour conserver les retours à la ligne */
+    border-right: 2px solid #333;
+  }
+
+  /* Curseur / ligne de commande */
+  .command-line {
+    color: #ffffff;
+    font-weight: bold;
+  }
+
+  /* UI moderne à droite */
+  #modern {
+    flex: 1;
+    background-color: #f5f5f5;
+    color: #000;
+    padding: 20px;
+  }
+
+  input, button {
+    padding: 8px;
+    margin-top: 10px;
+    font-family: Consolas, monospace;
+    font-size: 14px;
+  }
+
+  button {
+    cursor: pointer;
+  }
+
+  table {
+    width: 100%;
+    margin-top: 10px;
+    border-collapse: collapse;
+    font-family: Consolas, monospace;
+  }
+
+  table, th, td {
+    border: 1px solid #999;
+  }
+
+  th, td {
+    padding: 5px;
+    text-align: left;
+  }
+</style>
+</head>
+<body>
+
+  <!-- Legacy Screen -->
+  <div id="legacy"></div>
+
+  <!-- Modern Interface -->
+  <div id="modern">
+    <h2>AS/400 Remastered</h2>
+    <h3>Client Management</h3>
+    <input type="text" id="clientName" placeholder="Client name">
+    <button id="addClientBtn">Add Client</button>
+    <button id="quitBtn" style="background:red;color:white;">Exit</button>
+
+    <table>
+      <thead>
+        <tr><th>ID</th><th>Name</th></tr>
+      </thead>
+      <tbody id="clientTableBody"></tbody>
+    </table>
+  </div>
+
+  <script src="renderer.js"></script>
+</body>
+</html>
